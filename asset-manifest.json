@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/JetStartInternWork/static/css/main.af93f41e.css",
+    "main.js": "/JetStartInternWork/static/js/main.a1585b04.js",
+    "index.html": "/JetStartInternWork/index.html",
+    "main.af93f41e.css.map": "/JetStartInternWork/static/css/main.af93f41e.css.map",
+    "main.a1585b04.js.map": "/JetStartInternWork/static/js/main.a1585b04.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af93f41e.css",
+    "static/js/main.a1585b04.js"
+  ]
+}
