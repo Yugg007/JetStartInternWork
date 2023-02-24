@@ -6,32 +6,23 @@ import CustomerDetails from "./components/CustomerDetails";
 export default function App() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
-
-  const [field, setField] = useState();
-  const [submitted, setSubmit] = useState(false);
-
+  const [ordered, setordered] = useState(false);
   const onSubmit = (data) => {
-    setField(data)
-    setSubmit(true)
+    setordered(true)    
   }
-
-  console.log(errors.email)
 
   return (
     <div>
-      {submitted ? <CustomerDetails /> :
+      {ordered ? <CustomerDetails /> :
         <div className="form-container">
           <h2>Order Details</h2>
           <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
-
-          
-
             <input
-              id="first-name"
+              id="product-name"
               className="form-field"
               type="text"
               placeholder="Product Name"
-              {...register('firstName', { required: "Product Name is required!" })}
+              {...register('ProductName', { required: "Product Name is required!" })}
 
 
             />
@@ -39,11 +30,11 @@ export default function App() {
             <span>{errors.firstName?.message}</span>
 
             <input
-              id="last-name"
+              id="price"
               className="form-field"
-              type="text"
+              type="number"
               placeholder="Price"
-              {...register('lastName', { required: "Price is required!" })}
+              {...register('price', { required: "Price is required!" })}
 
             />
 
@@ -51,25 +42,23 @@ export default function App() {
 
 
             <input
-              id="email"
+              id="orderID"
               className="form-field"
-              type="email"
+              type="number"
               placeholder="Order ID"
-              {...register('email', { required: "Order ID is required!", pattern: { value: /^\S+@\S+$/i, message: "Invalid email" } })}
+              {...register('orderID', { required: "Order ID is required!" })}
 
             />
 
             <span>{errors.email?.message}</span>
 
             <input
-              id="Password"
+              id="Date"
               className="form-field"
-              type="password"
+              type="date"
               placeholder="Date"
-              {...register('password', {
-                required: "Date is required!",
-                minLength: { value: 4, message: "Password must be more than 4 characters" },
-                maxLength: { value: 20, message: "Password cannot be more than 20 characters" }
+              {...register('date', {
+                required: "Date is required!"
               })}
 
             />
